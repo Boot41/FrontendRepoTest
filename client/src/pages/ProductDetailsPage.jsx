@@ -3,16 +3,16 @@ import ProductDetails from '../components/ProductDetails';
 
 const ProductDetailsPage = () => {
     return (
-        <div className="bg-primaryBackground p-medium flex flex-col items-center" style={{ fontFamily: '"Roboto", sans-serif' }}>
-            <h1 className="text-heading font-heading mb-large" style={{ color: '#212121', fontSize: '24px', lineHeight: '1.5', letterSpacing: '0.5px' }}>
+        <div className="flex flex-col items-center justify-center bg-primaryBackground p-medium" style={{ fontFamily: '"Roboto", sans-serif' }}>
+            <h1 className="text-heading font-heading text-heading color-primary mb-large" style={{ color: '#212121', fontSize: '24px', lineHeight: '1.5' }}>
                 Product Details
             </h1>
-            <p className="text-body mb-large" style={{ color: '#757575', fontSize: '14px', lineHeight: '1.6' }}>
-                This page will host the ProductDetails component, delivering an in-depth focus on the selected product to users, ensuring a seamless browsing experience that cultivates informed purchasing decisions.
-            </p>
-            <div className="bg-white shadow-cardStyles border border-borderColors rounded-borderRadius p-medium w-containerWidths[0]">
+            <div className="bg-white shadow-md rounded border border-borderColors p-large mb-large" style={{ width: '80%', borderRadius: '4px' }}>
                 <ProductDetails />
             </div>
+            <button className="bg-primaryButton text-white py-medium px-large rounded transition-all duration-300 hover:bg-opacity-90" style={{ backgroundColor: '#4CAF50', borderRadius: '4px' }}>
+                Add to Cart
+            </button>
         </div>
     );
 };
