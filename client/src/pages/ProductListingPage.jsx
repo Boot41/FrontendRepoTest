@@ -1,28 +1,29 @@
 import React from 'react';
-import ProductCard from '../components/ProductCard';
+import CategoryFilter from '../components/CategoryFilter';
 
 const ProductListingPage = () => {
-    const products = [
-        // Example product data
-        { id: 1, name: 'Product A', price: 29.99, image: '/images/product-a.jpg' },
-        { id: 2, name: 'Product B', price: 39.99, image: '/images/product-b.jpg' },
-        { id: 3, name: 'Product C', price: 49.99, image: '/images/product-c.jpg' },
-        // Add more products as needed
-    ];
-
     return (
-        <div className="bg-secondaryBackground py-medium">
-            <h1 className="text-heading text-24 font-heading text-heading text-center mb-large">Product Listing</h1>
-            <div className="container mx-auto px-medium grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-large">
-                {products.map(product => (
-                    <ProductCard 
-                        key={product.id} 
-                        name={product.name} 
-                        price={product.price} 
-                        image={product.image} 
-                        className="shadow-md rounded border border-borderColors transition-shadow duration-300 hover:shadow-lg" 
-                    />
-                ))}
+        <div className="bg-primaryBackground text-body" style={{ fontFamily: '"Roboto", sans-serif', padding: '24px' }}>
+            <h1 className="text-heading font-heading" style={{ fontSize: '24px', color: '#212121', lineHeight: '1.5' }}>
+                Product Listing
+            </h1>
+            <p style={{ color: '#757575', lineHeight: '1.6', fontSize: '14px' }}>
+                A dynamic page showcasing products that are filtered according to user-selected categories. This page integrates the CategoryFilter component, offering a streamlined and intuitive interface for product discovery.
+            </p>
+            <div className="mt-6">
+                <CategoryFilter />
+            </div>
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
+                {/* Dummy product cards for layout demonstration */}
+                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
+                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 1</h2>
+                </div>
+                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
+                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 2</h2>
+                </div>
+                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
+                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 3</h2>
+                </div>
             </div>
         </div>
     );
