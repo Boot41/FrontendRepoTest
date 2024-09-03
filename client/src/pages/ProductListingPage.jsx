@@ -1,29 +1,18 @@
 import React from 'react';
-import CategoryFilter from '../components/CategoryFilter';
+import ProductCard from '../components/ProductCard';
 
 const ProductListingPage = () => {
+    const products = [/* array of product data */];
+
     return (
-        <div className="bg-primaryBackground text-body" style={{ fontFamily: '"Roboto", sans-serif', padding: '24px' }}>
-            <h1 className="text-heading font-heading" style={{ fontSize: '24px', color: '#212121', lineHeight: '1.5' }}>
-                Product Listing
-            </h1>
-            <p style={{ color: '#757575', lineHeight: '1.6', fontSize: '14px' }}>
-                A dynamic page showcasing products that are filtered according to user-selected categories. This page integrates the CategoryFilter component, offering a streamlined and intuitive interface for product discovery.
-            </p>
-            <div className="mt-6">
-                <CategoryFilter />
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-6">
-                {/* Dummy product cards for layout demonstration */}
-                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
-                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 1</h2>
-                </div>
-                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
-                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 2</h2>
-                </div>
-                <div className="bg-white rounded shadow" style={{ padding: '16px', borderRadius: '4px' }}>
-                    <h2 className="text-heading" style={{ fontSize: '20px', color: '#212121' }}>Product 3</h2>
-                </div>
+        <div className="bg-primaryBackground p-medium font-roboto flex flex-col items-center">
+            <h1 className="text-heading font-heading mb-medium">Product Listing</h1>
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-medium">
+                {products.map(product => (
+                    <div key={product.id} className="shadow border border-borderColors rounded border-radius transition-transform transform hover:scale-105">
+                        <ProductCard product={product} />
+                    </div>
+                ))}
             </div>
         </div>
     );
